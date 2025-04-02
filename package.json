@@ -1,0 +1,16 @@
+{
+  "name": "vacations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm serve src -p 3005"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.7.0",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
