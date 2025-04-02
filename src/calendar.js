@@ -1,6 +1,6 @@
 import { html } from 'htm/preact';
 
 export function Calendar() {
-  return html`<h2>Calendar</h2>`;
+  return html`<h2 class="text-2xl font-bold">Calendar</h2>`;
 }
 
