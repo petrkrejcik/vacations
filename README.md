@@ -1,2 +1,0 @@
-# vacations
-Days-off planner
