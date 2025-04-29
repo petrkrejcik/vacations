@@ -244,7 +244,7 @@ export function Calendar({ initialLayers, activeSelectionMode }) {
                         // Ensuring rings are evenly distributed and properly spaced
                         const totalLayers = array.length;
                         // Adjust inset calculations to accommodate thicker borders
-                        const ringWidth = totalLayers > 1 ? (85 / totalLayers) : 35;
+                        const ringWidth = totalLayers > 1 ? (45 / totalLayers) : 35;
                         const inset = 8 + ((totalLayers - idx - 1) * ringWidth / 2);
                         // Determine border thickness (increased for better visibility)
                         const borderThickness = totalLayers > 2 ? '2px' : '2.5px';
