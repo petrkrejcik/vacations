@@ -39,3 +39,9 @@ The data is stored only in the browser in the localStorage in one JSON object.
 ```bash
 pnpm serve
 ```
+
+## Data
+
+```json
+{"layers":[{"id":"vacation","name":"My vacations","color":"#4ade80","active":true,"dates":["2025-12-31","2025-01-01","2025-01-02","2025-01-06"]},{"id":"layer_1745959259240","name":"Festivos","color":"#eaf73b","active":true,"dates":["2025-04-16","2025-04-17","2025-04-30","2025-07-27","2025-08-14","2025-09-14","2025-10-31","2025-12-05","2025-12-07","2025-12-24"]},{"id":"layer_1745959454024","name":"No hay cole","color":"#f73bbb","active":true,"dates":["2025-04-20","2025-04-21","2025-04-22","2025-04-23","2025-04-24"]}],"totalVacationDays":30}
+```

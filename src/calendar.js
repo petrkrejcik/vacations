@@ -236,15 +236,33 @@ export function Calendar({ initialLayers, activeSelectionMode }) {
                         ${getCursorStyle(date)}"
                       onClick=${() => handleDayClick(date)}
                     >
-                      <span class="${dateLayers.length > 0 ? 'z-10' : ''}">${day || ''}</span>
+                      <span class="z-10">${day || ''}</span>
                       
-                      ${dateLayers.map((layer, idx) => html`
-                        <div 
-                          class="absolute inset-0 rounded-full opacity-70" 
-                          style="background-color: ${layer.color}; z-index: ${idx};"
-                          title="${layer.name}"
-                        ></div>
-                      `)}
+                      ${dateLayers.map((layer, idx, array) => {
+                        // Calculate inset percentage based on layer position and total number of layers
+                        // Start from the center and move outward
+                        // Ensuring rings are evenly distributed and properly spaced
+                        const totalLayers = array.length;
+                        // Adjust inset calculations to accommodate thicker borders
+                        const ringWidth = totalLayers > 1 ? (85 / totalLayers) : 35;
+                        const inset = 8 + ((totalLayers - idx - 1) * ringWidth / 2);
+                        // Determine border thickness (increased for better visibility)
+                        const borderThickness = totalLayers > 2 ? '2px' : '2.5px';
+                        
+                        return html`
+                          <div 
+                            class="absolute rounded-full pointer-events-none" 
+                            style="
+                              top: ${inset}%; 
+                              right: ${inset}%; 
+                              bottom: ${inset}%; 
+                              left: ${inset}%; 
+                              border: ${borderThickness} solid ${layer.color}; 
+                              z-index: ${totalLayers - idx};"
+                            title="${layer.name}"
+                          ></div>
+                        `;
+                      })}
                     </div>
                   `;
                 })}
